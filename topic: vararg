@@ -1,0 +1,19 @@
+fun main(args: Array<String>) {
+println(alternatingSum(3,4,5,6,7,8,9,10))//prints alternating sum of entered numbers
+}
+fun power(a:Int,b:Int):Int{//bcz Math.pow works only for double types
+    var result=1
+    if(b==0)
+        return result
+    else {for(i in 1..b){
+            result*=a
+    }}
+    return result
+}
+fun alternatingSum(vararg numbers:Int):Int{
+    var sum=0
+    for(i in 0 until numbers.size){
+        sum=sum+power(-1,i)*numbers[i]
+    }
+    return sum
+}
